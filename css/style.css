@@ -189,6 +189,7 @@ body {
   border-radius: 16px;
   padding: 20px;
   box-shadow: var(--shadow-sm);
+  overflow: hidden;
 }
 
 .wcard__top {
@@ -224,13 +225,16 @@ body {
 }
 
 .widget-container {
-  width: 100%;
+  width: 100% !important;
+  max-width: 100% !important;
   content-visibility: auto;
+  overflow: hidden;
 }
 
 .widget-container iframe {
+  width: 100% !important;
+  max-width: 100% !important;
   border-radius: 8px;
-  max-width: 100%;
 }
 
 /* Промокоды */
@@ -247,6 +251,34 @@ body {
   color: var(--text-muted);
   font-size: 15px;
   margin-top: 6px;
+}
+
+.carousel-nav {
+  display: flex;
+  gap: 8px;
+}
+
+.carousel-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: #fff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: all 0.2s;
+  color: var(--text-main);
+}
+
+.carousel-btn:hover {
+  background: var(--bg-body);
+  border-color: var(--text-muted);
+}
+
+.carousel-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 .carousel-container {
@@ -364,7 +396,7 @@ body {
   background: var(--accent-hover);
 }
 
-/* Промо-баннер (финальный CTA) */
+/* Промо-баннер */
 .promo-banner {
   background: var(--bg-surface);
   border: 1px solid var(--border);
@@ -412,6 +444,10 @@ body {
 
 @media (max-width: 768px) {
   .nav {
+    display: none;
+  }
+
+  .carousel-nav {
     display: none;
   }
 
