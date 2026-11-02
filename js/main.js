@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const track = document.querySelector('.carousel-track');
   const cards = document.querySelectorAll('.promo-card');
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+  const nextBtn = document.querySelector('.carousel-btn.next');
 
   if (!track || cards.length === 0) return;
 
@@ -19,26 +21,37 @@ document.addEventListener('DOMContentLoaded', () => {
     track.style.transform = `translateX(-${index * cardWidth}px)`;
   };
 
+  const goNext = () => {
+    const maxIndex = Math.max(0, cards.length - getVisibleCount());
+    if (index < maxIndex) {
+      index++;
+      updateCarousel();
+    }
+  };
+
+  const goPrev = () => {
+    if (index > 0) {
+      index--;
+      updateCarousel();
+    }
+  };
+
+  if (nextBtn) nextBtn.addEventListener('click', goNext);
+  if (prevBtn) prevBtn.addEventListener('click', goPrev);
+
   // Свайпы
   let startX = 0;
-  let endX = 0;
 
   track.addEventListener('touchstart', (e) => {
     startX = e.touches[0].clientX;
   }, { passive: true });
 
   track.addEventListener('touchend', (e) => {
-    endX = e.changedTouches[0].clientX;
+    const endX = e.changedTouches[0].clientX;
     const threshold = 50;
-    const maxIndex = Math.max(0, cards.length - getVisibleCount());
 
-    if (startX - endX > threshold && index < maxIndex) {
-      index++;
-      updateCarousel();
-    } else if (endX - startX > threshold && index > 0) {
-      index--;
-      updateCarousel();
-    }
+    if (startX - endX > threshold) goNext();
+    if (endX - startX > threshold) goPrev();
   }, { passive: true });
 
   // Сброс при ресайзе
@@ -51,4 +64,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 150);
   });
 
+  updateCarousel();
 });
