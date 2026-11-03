@@ -3,21 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>FlyPlus — Поиск выгодных авиабилетов и отелей</title>
-  <meta name="description" content="Сравнивайте цены на авиабилеты и отели в реальном времени. Актуальные предложения, промокоды и удобный поиск без лишних шагов.">
+  <title>FlyPlus — Умный поиск авиабилетов и отелей</title>
+  <meta name="description" content="Спокойный поиск авиабилетов и отелей. Помогаем найти хороший вариант без давления, скрытых платежей и лишнего шума.">
   <link rel="canonical" href="https://flyplus.ru/">
-  <meta name="theme-color" content="#F8F9FA">
+  <meta name="theme-color" content="#F7F8FA">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="FlyPlus">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:url" content="https://flyplus.ru/">
-  <meta property="og:title" content="FlyPlus — Поиск выгодных авиабилетов и отелей">
-  <meta property="og:description" content="Сравнивайте цены на авиабилеты и отели. Без скрытых платежей и лишних шагов.">
+  <meta property="og:title" content="FlyPlus — Умный поиск авиабилетов и отелей">
+  <meta property="og:description" content="Спокойный поиск без давления. Помогаем найти хороший вариант.">
   <meta property="og:image" content="https://flyplus.ru/og-image.jpg">
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23F3F4F6'/%3E%3Cpath d='M16 7l7 18-7-4-7 4z' fill='%231E3A8A'/%3E%3C/svg%3E">
-
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23EEF2FF'/%3E%3Cpath d='M16 7l7 18-7-4-7 4z' fill='%231E3A8A'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="css/style.css">
 
   <script>
@@ -29,31 +28,60 @@
       document.head.appendChild(script);
     })();
   </script>
+
+  <!-- Яндекс.Метрика. ЗАМЕНИТЬ XXXXXXXX на числовой ID счётчика —
+       до замены (не цифры) код не выполняется и запросов к mc.yandex.ru нет. -->
+  <script>
+    window.YM_ID = 'XXXXXXXX';
+    if (/^\d+$/.test(window.YM_ID)) {
+      (function (m, e, t, r, i, k, a) {
+        m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+        m[i].l = 1 * new Date();
+        for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+        k = e.createElement(t); a = e.getElementsByTagName(t)[0];
+        k.async = 1; k.src = r; a.parentNode.insertBefore(k, a);
+      })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
+      ym(window.YM_ID, 'init', { clickmap: true, trackLinks: true, accurateTrackBounce: true, webvisor: false });
+    }
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/XXXXXXXX" style="position:absolute;left:-9999px" alt="" /></div></noscript>
 </head>
 <body>
 
-<header class="header" role="banner">
+<header class="header">
   <div class="container header__in">
-    <a href="/" class="logo" aria-label="FlyPlus — на главную">
+    <a href="/" class="logo" aria-label="FlyPlus">
       <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4l10 22-10-6-10 6z"/></svg>
       <span>FlyPlus</span>
     </a>
-    <nav class="nav" aria-label="Навигация">
+    <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="main-nav">
+      <a href="#search">Поиск</a>
+      <a href="#why">Почему мы</a>
       <a href="#directions">Направления</a>
-      <a href="#pricemap">Карта цен</a>
+      <a href="#map-prices">Карта цен</a>
       <a href="#hotels">Отели</a>
+      <a href="#short-term">Посуточно</a>
       <a href="#excursions">Экскурсии</a>
-      <a href="#promo">Промокоды</a>
+      <a href="#checklist">Перед поездкой</a>
+      <a href="#insurance">Страховка</a>
+      <a href="#request">Заявка</a>
     </nav>
   </div>
 </header>
 
 <main>
 
-  <!-- 1. HERO + ПОИСК -->
-  <section class="hero container">
-    <h1 class="hero-title">Найдите выгодные <em>авиабилеты</em></h1>
-    <p class="hero-subtitle">Сравнивайте цены на авиабилеты и отели в реальном времени. Без скрытых платежей и лишних шагов.</p>
+  <!-- HERO -->
+  <section class="hero container" id="search">
+    <div class="hero__badge">Спокойный поиск без давления</div>
+    <h1 class="hero-title">Найдите хороший вариант<br>без переплат и сомнений</h1>
+    <p class="hero-subtitle">
+      Мы помогаем быстро понять, какие предложения действительно достойны внимания.
+      Без скрытых платежей, таймеров и искусственного дефицита.
+    </p>
 
     <div class="search-wrapper">
       <div id="tpwl-search"></div>
@@ -64,175 +92,354 @@
     </div>
   </section>
 
-  <!-- 2. ПОПУЛЯРНЫЕ НАПРАВЛЕНИЯ -->
+  <!-- TRUST STRIP -->
+  <section class="trust-strip">
+    <div class="container trust-strip__in">
+      <div class="trust-item">
+        <div class="trust-item__num">01</div>
+        <div class="trust-item__text">Сравниваем предложения из разных источников</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-item__num">02</div>
+        <div class="trust-item__text">Показываем понятные и актуальные варианты</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-item__num">03</div>
+        <div class="trust-item__text">Помогаем избежать частых ошибок</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="section container" id="why">
+    <div class="why-grid">
+      <div class="why-content">
+        <h2 class="section-title">Зачем нужен<br><em>FlyPlus</em></h2>
+        <p class="why-text">
+          Большинство сервисов давят, торопят и запутывают. Мы сделали наоборот —
+          спокойный инструмент, который помогает разобраться и выбрать нормальный вариант
+          без лишнего стресса.
+        </p>
+        <ul class="why-list">
+          <li>Честное сравнение, а не навязывание</li>
+          <li>Понятный интерфейс без перегрузки</li>
+          <li>Фокус на удобстве и ясности</li>
+        </ul>
+      </div>
+      <div class="why-cards">
+        <div class="why-card">
+          <div class="why-card__title">Быстро</div>
+          <div class="why-card__desc">Находите подходящие варианты за минуты, а не за полчаса</div>
+        </div>
+        <div class="why-card">
+          <div class="why-card__title">Прозрачно</div>
+          <div class="why-card__desc">Сразу видно ключевые условия и ограничения</div>
+        </div>
+        <div class="why-card">
+          <div class="why-card__title">Спокойно</div>
+          <div class="why-card__desc">Без всплывающих окон, таймеров и давления</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIRECTIONS -->
   <section class="section container" id="directions">
-    <h2 class="section-title">Популярные <em>направления</em></h2>
+    <div class="section-head">
+      <h2 class="section-title">Куда сейчас<br><em>выгодно</em></h2>
+      <p class="section-desc">Актуальные направления с хорошим соотношением цены и удобства</p>
+    </div>
     <div class="wcard">
       <div class="wcard__top">
-        <span class="wcard__title">Куда сейчас выгодно лететь</span>
+        <span class="wcard__title">Популярные направления</span>
         <span class="ad-chip"><b>Реклама</b> · erid: 2VtzqxZNEia</span>
       </div>
-      <div class="widget-container" style="min-height: 320px;">
+      <div class="widget-container">
         <script async src="https://tpwidg.com/content?currency=rub&trs=191650&shmarker=388310&destination=AER&target_host=www.aviasales.ru%2Fsearch&locale=ru&limit=6&powered_by=true&primary=%230085FF&erid=2VtzqxZNEia&promo_id=4044&campaign_id=100" charset="utf-8"></script>
       </div>
     </div>
   </section>
 
-  <!-- 3. КАРТА ЦЕН -->
-  <section class="section container" id="pricemap">
-    <h2 class="section-title">Карта <em>цен</em></h2>
-    <div class="wcard">
-      <div class="wcard__top">
-        <span class="wcard__title">Куда улететь дешевле</span>
+  <!-- PRICE MAP -->
+  <section class="section container" id="map-prices">
+    <div class="section-head">
+      <h2 class="section-title">Карта цен<br><em>куда улететь дешевле</em></h2>
+      <p class="section-desc">Наведите на город на карте — увидите цену перелёта туда-обратно</p>
+    </div>
+    <div class="wcard-grid">
+      <div class="wcard">
+        <div class="wcard__top">
+          <span class="wcard__title">Карта цен · Авиасейлс</span>
+          <span class="ad-chip"><b>Реклама</b></span>
+        </div>
+        <div class="widget-container">
+          <script async src="https://tpwidg.com/content?currency=rub&trs=191650&shmarker=388310&lat=&lng=&powered_by=true&search_host=www.aviasales.ru%2Fsearch&locale=ru&value_min=0&value_max=1000000&round_trip=true&only_direct=false&radius=1&draggable=true&disable_zoom=false&show_logo=false&scrollwheel=false&primary=%233FABDB&secondary=%23FFFFFF&light=%23FFFFFF&width=1500&height=500&zoom=2&promo_id=4054&campaign_id=100" charset="utf-8"></script>
+        </div>
       </div>
-      <div class="widget-container" style="min-height: 480px; overflow-x: auto;">
-        <script async src="https://tpwidg.com/content?currency=rub&trs=191650&shmarker=388310&lat=&lng=&powered_by=true&search_host=www.aviasales.ru%2Fsearch&locale=ru&value_min=0&value_max=1000000&round_trip=true&only_direct=false&radius=1&draggable=true&disable_zoom=false&show_logo=false&scrollwheel=false&primary=%231E3A8A&secondary=%231E3A8A&light=%23ffffff&height=480&zoom=2&promo_id=4054&campaign_id=100" charset="utf-8"></script>
+      <div class="wcard">
+        <div class="wcard__top">
+          <span class="wcard__title">Календарь цен · Авиасейлс</span>
+          <span class="ad-chip"><b>Реклама</b></span>
+        </div>
+        <div class="widget-container">
+          <script async src="https://tpwidg.com/content?currency=rub&trs=191650&shmarker=388310&searchUrl=www.aviasales.ru%2Fsearch&locale=ru&powered_by=true&origin=MOW&destination=AER&one_way=false&only_direct=false&period=year&range=7%2C14&primary=%230C73FE&color_background=%23FFFFFF&dark=%23000000&light=%23FFFFFF&achieve=%2345AD35&promo_id=4041&campaign_id=100" charset="utf-8"></script>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 4. ОТЕЛИ НА КАРТЕ -->
+  <!-- HOTELS -->
   <section class="section container" id="hotels">
-    <h2 class="section-title">Отели на <em>карте</em></h2>
-    <div class="wcard">
-      <div class="wcard__top">
-        <span class="wcard__title">Яндекс Путешествия</span>
-        <span class="ad-chip"><b>Реклама</b> · erid: 2VtzqvBYQYE</span>
+    <div class="section-head">
+      <h2 class="section-title">Отели<br><em>с хорошей оценкой</em></h2>
+      <p class="section-desc">Подборка проверенных вариантов, чтобы не тратить время на сомнительные</p>
+    </div>
+    <div class="wcard-grid">
+      <div class="wcard">
+        <div class="wcard__top">
+          <span class="wcard__title">Яндекс Путешествия</span>
+          <span class="ad-chip"><b>Реклама</b> · erid: 2VtzqvBYQYE</span>
+        </div>
+        <div class="widget-container">
+          <script async src="https://tpwidg.com/content?trs=191650&shmarker=388310&city=239&theme=light&powered_by=false&erid=2VtzqvBYQYE&campaign_id=193&promo_id=8631" charset="utf-8"></script>
+        </div>
       </div>
-      <div class="widget-container" style="min-height: 450px;">
-        <script async src="https://tpwidg.com/content?trs=191650&shmarker=388310&city=239&theme=light&powered_by=false&erid=2VtzqvBYQYE&campaign_id=193&promo_id=8631" charset="utf-8"></script>
+      <div class="wcard">
+        <div class="wcard__top">
+          <span class="wcard__title">Островок</span>
+          <span class="ad-chip"><b>Реклама</b></span>
+        </div>
+        <div class="widget-container">
+          <script async src="https://tpwidg.com/content?trs=191650&shmarker=388310&locale=ru&region_id=5580&region_name=%D0%A1%D0%BE%D1%87%D0%B8&logo=false&powered_by=false&campaign_id=459&promo_id=7148" charset="utf-8"></script>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 5. ПОПУЛЯРНЫЕ ОТЕЛИ -->
-  <section class="section container">
-    <h2 class="section-title">Популярные <em>отели</em></h2>
+  <!-- SHORT-TERM HOUSING -->
+  <section class="section container" id="short-term">
+    <div class="section-head">
+      <h2 class="section-title">Посуточное жильё<br><em>квартиры и апартаменты</em></h2>
+      <p class="section-desc">Когда отель не нужен — жильё на несколько дней в том же городе</p>
+    </div>
     <div class="wcard">
       <div class="wcard__top">
-        <span class="wcard__title">Островок</span>
-        <span class="ad-chip"><b>Реклама</b> · erid: 2VtzqvJxLwx</span>
+        <span class="wcard__title">Суточно.ру</span>
+        <span class="ad-chip"><b>Реклама</b></span>
       </div>
-      <div class="widget-container" style="min-height: 380px;">
-        <script async src="https://tpwidg.com/content?trs=191650&shmarker=388310&region=5580_%D0%A1%D0%BE%D1%87%D0%B8&star=1&rating=0&distance=30&hotelkind=Hotel&number=5&powered_by=false&erid=2VtzqvJxLwx&campaign_id=459&promo_id=7240" charset="utf-8"></script>
+      <div class="widget-container">
+        <script async src="https://tpwidg.com/content?trs=191650&shmarker=388310&locale=ru&destination=%D0%A1%D0%BE%D1%87%D0%B8&powered_by=false&plain=true&border_radius=5&color_background=%23FFFFFF&color_border=%23DDDDDD&color_button=%23F51449&color_icons=%23F51449&promo_id=2719&campaign_id=99" charset="utf-8"></script>
       </div>
     </div>
   </section>
 
-  <!-- 6. ЭКСКУРСИИ -->
+  <!-- EXCURSIONS -->
   <section class="section container" id="excursions">
-    <h2 class="section-title">Экскурсии и <em>впечатления</em></h2>
+    <div class="section-head">
+      <h2 class="section-title">Экскурсии<br><em>и впечатления</em></h2>
+      <p class="section-desc">Проверенные экскурсии в популярных городах — чтобы поездка не была пустой</p>
+    </div>
     <div class="wcard">
       <div class="wcard__top">
         <span class="wcard__title">Трипстер</span>
         <span class="ad-chip"><b>Реклама</b> · erid: 2VtzqxWRc5c</span>
       </div>
-      <div class="widget-container" style="min-height: 320px;">
+      <div class="widget-container">
         <script async src="https://tpwidg.com/content?trs=191650&shmarker=388310&num=3&powered_by=false&widget_template=horizontal&logo=true&widgetbar=false&nolistbutton=false&price=false&widgetbar_position=top&erid=2VtzqxWRc5c&promo_id=1499&campaign_id=11" charset="utf-8"></script>
       </div>
     </div>
   </section>
 
-  <!-- 7. ПРОМОКОДЫ -->
-  <section class="section container" id="promo">
-    <div class="section-header">
-      <div>
-        <h2 class="section-title">Актуальные <em>промокоды</em></h2>
-        <p>Проверенные скидки от партнёров</p>
-      </div>
-      <div class="carousel-nav">
-        <button class="carousel-btn prev" aria-label="Предыдущие промокоды" type="button">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-        </button>
-        <button class="carousel-btn next" aria-label="Следующие промокоды" type="button">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-        </button>
-      </div>
+  <!-- CHECKLIST - Protection from mistakes -->
+  <section class="section container" id="checklist">
+    <div class="section-head">
+      <h2 class="section-title">Перед поездкой<br><em>проверьте</em></h2>
+      <p class="section-desc">Короткий список, который экономит деньги и нервы</p>
     </div>
 
-    <div class="carousel-container">
-      <div class="carousel-track" id="promo-track">
-
-        <article class="promo-card">
-          <div class="promo-card__header">
-            <div class="promo-card__brand">
-              <div class="brand-icon">Я</div>
-              <div>
-                <div class="brand-name">Яндекс Путешествия</div>
-                <div class="brand-sub">Авиабилеты</div>
-              </div>
-            </div>
-            <span class="ad-chip"><b>Реклама</b></span>
-          </div>
-          <div class="promo-card__discount">Скидка 10%</div>
-          <div class="promo-card__desc">На первый заказ авиабилетов для новых пользователей.</div>
-          <a href="https://yandex.tpx.li/6RZoWftY?erid=2VtzqueU2SJ" target="_blank" rel="nofollow sponsored noopener" class="btn">Получить скидку</a>
-        </article>
-
-        <article class="promo-card">
-          <div class="promo-card__header">
-            <div class="promo-card__brand">
-              <div class="brand-icon">Я</div>
-              <div>
-                <div class="brand-name">Яндекс Путешествия</div>
-                <div class="brand-sub">Отели</div>
-              </div>
-            </div>
-            <span class="ad-chip"><b>Реклама</b></span>
-          </div>
-          <div class="promo-card__discount">2 000 ₽</div>
-          <div class="promo-card__desc">При бронировании отелей от 20 000 ₽.</div>
-          <a href="https://yandex.tpx.li/pvVxBU2P?erid=2Vtzqufx1ie" target="_blank" rel="nofollow sponsored noopener" class="btn">Получить скидку</a>
-        </article>
-
-        <article class="promo-card">
-          <div class="promo-card__header">
-            <div class="promo-card__brand">
-              <div class="brand-icon" style="color:#00AAFF">A</div>
-              <div>
-                <div class="brand-name">Avito Путешествия</div>
-                <div class="brand-sub">Туры</div>
-              </div>
-            </div>
-            <span class="ad-chip"><b>Реклама</b></span>
-          </div>
-          <div class="promo-card__discount">3 000 ₽</div>
-          <div class="promo-card__desc">На туры по России от 30 000 ₽.</div>
-          <a href="https://avito.tpx.li/LYbeh4gt?erid=2VtzquiuzHL" target="_blank" rel="nofollow sponsored noopener" class="btn">Получить скидку</a>
-        </article>
-
-        <article class="promo-card">
-          <div class="promo-card__header">
-            <div class="promo-card__brand">
-              <div class="brand-icon">О</div>
-              <div>
-                <div class="brand-name">Островок</div>
-                <div class="brand-sub">Отели</div>
-              </div>
-            </div>
-            <span class="ad-chip"><b>Реклама</b></span>
-          </div>
-          <div class="promo-card__discount">Скидка</div>
-          <div class="promo-card__desc">Актуальные предложения на отели.</div>
-          <a href="https://ostrovok.tpx.li/SEo2IdTI?erid=2VtzqusouyQ" target="_blank" rel="nofollow sponsored noopener" class="btn">Смотреть</a>
-        </article>
-
+    <div class="checklist">
+      <div class="checklist__item">
+        <div class="checklist__num">1</div>
+        <div class="checklist__body">
+          <div class="checklist__title">Документы</div>
+          <div class="checklist__text">Срок действия паспорта, виза (если нужна), совпадение имени в билете с документами</div>
+        </div>
+      </div>
+      <div class="checklist__item">
+        <div class="checklist__num">2</div>
+        <div class="checklist__body">
+          <div class="checklist__title">Багаж</div>
+          <div class="checklist__text">Входит ли багаж в тариф, какие ограничения по ручной клади, нужна ли доплата</div>
+        </div>
+      </div>
+      <div class="checklist__item">
+        <div class="checklist__num">3</div>
+        <div class="checklist__body">
+          <div class="checklist__title">Страховка</div>
+          <div class="checklist__text">Медицинская защита за рубежом стоит обычно намного меньше одного обращения к врачу</div>
+        </div>
+      </div>
+      <div class="checklist__item">
+        <div class="checklist__num">4</div>
+        <div class="checklist__body">
+          <div class="checklist__title">Трансфер</div>
+          <div class="checklist__text">Как доберётесь из аэропорта. Иногда трансфер заранее оказывается спокойнее и выгоднее</div>
+        </div>
+      </div>
+      <div class="checklist__item">
+        <div class="checklist__num">5</div>
+        <div class="checklist__body">
+          <div class="checklist__title">Связь и деньги</div>
+          <div class="checklist__text">Роуминг, местная сим-карта или eSIM, уведомление банка о поездке</div>
+        </div>
+      </div>
+      <div class="checklist__item">
+        <div class="checklist__num">6</div>
+        <div class="checklist__body">
+          <div class="checklist__title">Время и пересадки</div>
+          <div class="checklist__text">Удобное время вылета и достаточное время на пересадку — часто важнее самой низкой цены</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 8. ФИНАЛЬНЫЙ ПРИЗЫВ -->
-  <section class="section container" id="final-cta">
-    <div class="promo-banner">
-      <div>
-        <h2 class="section-title" style="margin-bottom: 12px;">Не нашли подходящий вариант?</h2>
-        <p style="color: var(--text-muted); max-width: 520px; margin: 0;">
-          Посмотрите популярные направления или вернитесь к поиску — цены обновляются в реальном времени.
+  <!-- INSURANCE -->
+  <section class="section container" id="insurance">
+    <div class="insurance">
+      <div class="insurance__content">
+        <div class="insurance__badge">Важный момент</div>
+        <h2 class="section-title" style="margin-bottom: 12px;">Не забудьте<br><em>про страховку</em></h2>
+        <p class="insurance__text">
+          Даже самый удачный перелёт может осложниться. Медицинская страховка защищает
+          от непредвиденных расходов за границей и обычно стоит гораздо меньше,
+          чем один визит к врачу.
         </p>
+        <ul class="insurance__list">
+          <li>Медицинская помощь за рубежом</li>
+          <li>Отмена поездки по уважительной причине</li>
+          <li>Потеря багажа</li>
+        </ul>
+        <p class="insurance__note">Оформить можно за несколько минут вместе с билетами.</p>
       </div>
-      <div class="promo-banner__cta">
-        <a href="#directions" class="btn btn-primary">Смотреть направления</a>
-        <a href="#" class="btn" style="margin-top: 12px; display: inline-flex;" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Вернуться к поиску</a>
+      <div class="insurance__side">
+        <div class="insurance__card">
+          <div class="insurance__card-title">Коротко</div>
+          <div class="insurance__card-item">
+            <strong>Зачем</strong>
+            <span>Защита от больших расходов</span>
+          </div>
+          <div class="insurance__card-item">
+            <strong>Когда</strong>
+            <span>Лучше до поездки</span>
+          </div>
+          <div class="insurance__card-item">
+            <strong>Как</strong>
+            <span>Онлайн за пару минут</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section class="section container">
+    <div class="proof">
+      <h2 class="section-title" style="text-align:center; margin-bottom: 12px;">Люди ценят спокойный подход</h2>
+      <p class="proof__lead">Когда не давят и не запутывают — появляется доверие</p>
+
+      <div class="proof-grid">
+        <div class="proof-card">
+          <div class="proof-card__text">«Наконец-то нормальный поиск без кричащих баннеров и таймеров. Просто нашёл нужный рейс и всё.»</div>
+          <div class="proof-card__author">Алексей, Москва</div>
+        </div>
+        <div class="proof-card">
+          <div class="proof-card__text">«Удобно, что сразу видно и билеты, и нормальные отели. Не нужно прыгать по десяти сайтам.»</div>
+          <div class="proof-card__author">Марина, Санкт-Петербург</div>
+        </div>
+        <div class="proof-card">
+          <div class="proof-card__text">«Самое ценное — ощущение, что сайт помогает, а не пытается что-то впарить.»</div>
+          <div class="proof-card__author">Игорь, Казань</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REQUEST FORM -->
+  <section class="section container" id="request">
+    <div class="request">
+      <div class="request__content">
+        <div class="request__badge">Подбор тура и билетов</div>
+        <h2 class="section-title">Не нашли вариант сами?<br><em>Подберём за вас</em></h2>
+        <p class="request__text">
+          Оставьте заявку — перезвоним и поможем подобрать билеты, отель или тур
+          под ваши даты и бюджет. Без навязывания и скрытых платежей.
+        </p>
+        <ul class="request__list">
+          <li>Перезвоним в рабочее время</li>
+          <li>Сравним варианты под ваш бюджет</li>
+          <li>Ничего не навязываем</li>
+        </ul>
+      </div>
+      <form class="lead-form" id="lead-form" action="form.php" method="post" novalidate>
+        <div class="lead-form__row">
+          <label for="lf-name">Имя</label>
+          <input type="text" id="lf-name" name="name" autocomplete="name" required placeholder="Как к вам обращаться">
+        </div>
+        <div class="lead-form__row">
+          <label for="lf-phone">Телефон</label>
+          <input type="tel" id="lf-phone" name="phone" autocomplete="tel" required placeholder="+7 (___) ___-__-__">
+        </div>
+        <div class="lead-form__row">
+          <label for="lf-direction">Куда хотите поехать</label>
+          <input type="text" id="lf-direction" name="direction" placeholder="Например: Сочи, Турция">
+        </div>
+        <div class="lead-form__row">
+          <label for="lf-dates">Когда</label>
+          <input type="text" id="lf-dates" name="dates" placeholder="Например: март, на неделю">
+        </div>
+        <input type="hidden" id="lf-ts" name="ts" value="">
+        <div class="hp" aria-hidden="true">
+          <label for="lf-website">Не заполняйте это поле</label>
+          <input type="text" id="lf-website" name="website" class="hp" tabindex="-1" autocomplete="off">
+        </div>
+        <label class="lead-form__consent">
+          <input type="checkbox" name="consent" value="1" required>
+          <span>Согласен(а) на <a href="policy.html" target="_blank" rel="noopener">обработку персональных данных</a></span>
+        </label>
+        <div class="lead-form__errors" id="lead-form-errors" role="alert" hidden></div>
+        <button class="btn btn-primary lead-form__submit" type="submit">Отправить заявку</button>
+        <p class="lead-form__note">Данные используем только для подбора варианта и не передаём третьим лицам, кроме партнёров подбора.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- TICKET SEARCH ALT -->
+  <section class="section container" id="tickets-alt">
+    <div class="section-head">
+      <h2 class="section-title">Билеты<br><em>ещё один поиск</em></h2>
+      <p class="section-desc">Если привычнее искать через Trip.com — воспользуйтесь формой</p>
+    </div>
+    <div class="wcard">
+      <div class="wcard__top">
+        <span class="wcard__title">Trip.com · Авиабилеты</span>
+        <span class="ad-chip"><b>Реклама</b></span>
+      </div>
+      <div class="widget-container">
+        <script async src="https://tpwidg.com/content?trs=191650&shmarker=388310&locale=ru&curr=RUB&default_origin=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&default_destination=%D0%A1%D0%BE%D1%87%D0%B8&powered_by=false&border_radius=0&plain=true&color_button=%232681ff&color_button_text=%23ffffff&color_border=%232681ff&promo_id=4132&campaign_id=121" charset="utf-8"></script>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="section container" id="final">
+    <div class="final-block">
+      <div class="final-block__content">
+        <h2 class="section-title" style="margin-bottom: 12px;">Готовы найти хороший вариант?</h2>
+        <p>Вернитесь к поиску или посмотрите актуальные направления. Всё просто и прозрачно.</p>
+      </div>
+      <div class="final-block__actions">
+        <a href="#search" class="btn btn-primary">Начать поиск</a>
+        <a href="#directions" class="btn">Смотреть направления</a>
       </div>
     </div>
   </section>
@@ -240,8 +447,14 @@
 </main>
 
 <footer class="footer">
-  <div class="container">
-    <p>© 2026 FlyPlus. Сайт содержит партнёрские ссылки. Рекламные материалы маркированы «Реклама» и erid.</p>
+  <div class="container footer__in">
+    <div class="footer__left">
+      <div class="footer__logo">FlyPlus</div>
+      <p>Помогаем находить авиабилеты и отели спокойно и прозрачно.</p>
+    </div>
+    <div class="footer__right">
+      <p class="footer__legal">© 2026 FlyPlus. Сайт содержит партнёрские ссылки. Рекламные материалы маркированы «Реклама» и erid. <a href="policy.html">Политика обработки персональных данных</a>.</p>
+    </div>
   </div>
 </footer>
 
